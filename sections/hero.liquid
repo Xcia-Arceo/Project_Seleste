@@ -1,6 +1,83 @@
+<div class="hero-area" id="hero-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center">
+                <div class="left-content">
+                    <div class="content">
+                        <h1 class="title">
+                            100% Secure Investment Plan
+                        </h1>
+                        <p class="text">
+                            Quality control of your data including read length distribution and uniformity assessment.
+                        </p>
+                        <div class="subscribe-area">
+                            <form action="#" class="subscribe-form">
+                                <input type="email" placeholder="Enter your email">
+                                <button type="submit" class="submit-btn">Start Trial</button>
+                            </form>
+                            <a href="https://www.youtube.com/watch?v=CLuF2GK3Xzw" class="video-play-btn mfp-iframe">
+                                <img src="/assets/images/icons/play.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <div class="right-content">
+                    <img src="{{ 'assets/images/iso-hero.png' | asset_url }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+    "name": "hero",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image1",
+            "label": "Image 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Image 2"
+        },
+        {
+            "type": "text",
+            "id": "heading1",
+            "label": "Heading 1",
+            "default": "100% Secure Investment Plan"
+        },
+        {
+            "type": "richtext",
+            "id": "richtext1",
+            "label": "Richtext 1",
+            "default": "<p>Quality control of your data including read length distribution and uniformity assessment.</p>"
+        },
+        {
+            "type": "url",
+            "id": "link1",
+            "label": "Link 1"
+        },
+        {
+            "type": "text",
+            "id": "link1text",
+            "label": "Link 1 text",
+            "default": "{% if section.settings.image1 != blank %}{{ section.settings.image1 | image_url:  | image_tag: class: '', loading: 'lazy' }}{% endif %}"
+        },
+        {
+            "type": "text",
+            "id": "button1",
+            "label": "Button 1",
+            "default": "Start Trial"
+        }
+    ],
+    "presets": [
+        {
+            "name": "hero"
+        }
+    ]
+}
 {% endschema %}
